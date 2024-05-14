@@ -25,10 +25,10 @@ public class TestBase {
         }});
         Configuration.browserCapabilities = capabilities;
     }
-//    @BeforeEach
-//    void addListenerAllure() {
-//        SelenideLogger.addListener("allure", new AllureSelenide());
-//    }
+    @BeforeEach
+    void addListenerAllure() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
