@@ -18,12 +18,12 @@ public class TestBase {
         Configuration.remote = System.getProperty("browserUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");;
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", new HashMap<String, Object>() {{
-            put("enableVNC", true);
-            put("enableVideo", true);
-        }});
-        Configuration.browserCapabilities = capabilities;
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("selenoid:options", new HashMap<String, Object>() {{
+//            put("enableVNC", true);
+//            put("enableVideo", true);
+//        }});
+//        Configuration.browserCapabilities = capabilities;
     }
     @BeforeEach
     void addListenerAllure() {
