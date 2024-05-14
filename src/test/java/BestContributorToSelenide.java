@@ -43,7 +43,7 @@ class BestContributorToSelenide extends TestBase {
     @Test
     @Tag("remote")
     public void openGitHubSite() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+
         step("Открываем страницу Github", () -> {
             open("https://github.com/selenide/selenide");
         });
