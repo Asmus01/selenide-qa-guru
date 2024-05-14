@@ -19,16 +19,21 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
+        // включает в Selenoid подключение к порту VNС и возможность записывать видео
         capabilities.setCapability("selenoid:options", new HashMap<String, Object>() {{
             put("enableVNC", true);
             put("enableVideo", true);
         }});
         Configuration.browserCapabilities = capabilities;
     }
+
+    //передает в Allure-отчет все шаги теста
     @BeforeEach
     void addListenerAllure() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
+    // прикрепляет к ALLURE-отчету скрины и видео
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
