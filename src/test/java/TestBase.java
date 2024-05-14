@@ -16,7 +16,8 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "99.0");
         Configuration.remote = System.getProperty("browserUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
-        Configuration.browserSize = System.getProperty("resolution", "1920x1080");;
+        Configuration.browserSize = System.getProperty("resolution", "1920x1080");
+        ;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -33,6 +34,7 @@ public class TestBase {
     void addListenerAllure() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
+
     // прикрепляет к ALLURE-отчету скрины и видео
     @AfterEach
     void addAttachments() {
