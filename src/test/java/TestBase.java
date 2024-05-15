@@ -5,8 +5,13 @@ import net.bytebuddy.pool.TypePool;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.File;
+import java.net.URL;
 import java.util.HashMap;
 
 public class TestBase {
@@ -17,7 +22,14 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("version", "99.0");
         Configuration.remote = System.getProperty("browserUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
-        ;
+
+//        ChromeOptions options = new ChromeOptions();
+//        options.setBinary(new File("/path/to/opera"));
+//        ChromeDriver driver = new ChromeDriver(options); // локальная опера
+
+//        ChromeOptions options = new ChromeOptions();
+//        options.setBinary(new File("/path/to/opera"));
+//        RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/"), options); // ремоутная опера
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
